@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--BoardMapper.java와 경로 방식이 같아야 한다.-->
+<!--ex) com.sungsu.mapper.BoardMapper.java-->
+<!--    com.sungsu.mapper.BoardMapper.xml-->
+
+<mapper namespace="com.sungsu.mapper.BoardMapper">
+    <select id="findAll" resultType="com.sungsu.dto.Board">
+        SELECT
+            *
+        FROM board_tb;
+    </select>
+
+
+</mapper>
