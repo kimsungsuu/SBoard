@@ -5,6 +5,7 @@
 <!--BoardMapper.java와 경로 방식이 같아야 한다.-->
 <!--ex) com.sungsu.mapper.BoardMapper.java-->
 <!--    com.sungsu.mapper.BoardMapper.xml-->
+<!--TODO : parameterType ? -->
 
 <mapper namespace="com.sungsu.mapper.BoardMapper">
     <select id="findAll" resultType="com.sungsu.dto.Board">
@@ -13,5 +14,12 @@
         FROM board_tb;
     </select>
 
-
+    <select id="findById" parameterType="int" resultType="com.sungsu.dto.Board" >
+        SELECT
+            *
+        FROM
+            board_tb
+        WHERE
+            num=#{num};
+    </select>
 </mapper>
