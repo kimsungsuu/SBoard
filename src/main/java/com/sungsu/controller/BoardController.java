@@ -25,8 +25,8 @@ public class BoardController {
 
     @GetMapping("/{num}")
     public String detailBoard(@PathVariable int num, Model model){
-        Board byId = boardService.findById(num);
-        model.addAttribute("byId",byId);
+        Board detail = boardService.findById(num);
+        model.addAttribute("detail",detail);
         return "board/detailBoard";
     }
 

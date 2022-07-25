@@ -22,4 +22,6 @@
         WHERE
             num=#{num};
     </select>
+
+    <update id="save" ="com.sungsu.dto.Board"></update>
 </mapper>

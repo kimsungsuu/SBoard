@@ -6,26 +6,46 @@
 </head>
 <body>
 <div>
-    <h2 th:if="${param.status}" th:text="저장 완료!"></h2>
-
-<div>
     <table>
-        <thead>
             <tr>
                 <th>카테고리</th>
+                <td th:text="${detail.category}">카테고리</td>
+            </tr>
+            <tr>
                 <th>제목</th>
+                <td th:text="${detail.title}">제목</td>
+            </tr>
+            <tr>
                 <th>작성자</th>
+                <td th:text="${detail.writer}">작성자</td>
+            </tr>
+            <tr>
                 <th>내용</th>
+                <td th:text="${detail.text}">내용</td>
+            </tr>
+            <tr>
                 <th>작성일자</th>
+                <td th:text="${detail.createDate}">작성 일자</td>
+            </tr>
+            <tr>
                 <th>수정일자</th>
+                <td th:text="${detail.modDate}">수정 일자</td>
             </tr>
-        </thead>
-        <tbody>
-            <tr th:each="boards : ${byId}">
-            </tr>
-        </tbody>
     </table>
-</div>
+    <button type="button"
+            onclick="location.href='updateBoard.html'"
+            th:onclick="|location.href='@{/boards/{num}/update(num=${detail.num})}'|">수정</button>
+
+    <button type="button"
+            onclick="location.href='deleteBoard.html'"
+            th:onclick="|location.href='@{/boards/{num}/delete(num=${detail.num})}'|">삭제</button>
+
+    <button type="button"
+            onclick="location.href='boards.html'"
+            th:onclick="|location.href='@{/boards}'|">
+
+    </button>
+
 </div>
 </body>
 </html>

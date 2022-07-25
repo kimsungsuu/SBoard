@@ -23,4 +23,11 @@ public class Board {
     private LocalDateTime modDate;
     private String password;
     private int hit;
+
+    public Board(String category, String writer, String title, String text) {
+        this.category = category;
+        this.writer = writer;
+        this.title = title;
+        this.text = text;
+    }
 }

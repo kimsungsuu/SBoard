@@ -24,7 +24,7 @@
             <tr th:each="board : ${boards}">
                 <td th:text="${board.num}">번호</td>
                 <td th:text="${board.category}">카테고리</td>
-                <td><a th:href="@{/boards/detailBoard(num=${board.num})}" th:text="${board.title}">제목</a></td>
+                <td><a href="detailBoard.html" th:href="@{/boards/{num}(num=${board.num})}" th:text="${board.title}">제목</a></td>
                 <td th:text="${board.writer}">작성자</td>
                 <td th:text="${board.hit}"></td>
                 <td th:value="${board.createDate} ? ${#temporals.format(board.createDate, 'yyyy-MM-dd HH:mm')} : ${board.createDate}"></td>
